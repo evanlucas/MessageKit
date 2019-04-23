@@ -48,6 +48,8 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     /// The default value of this property is `false`.
     open var maintainPositionOnKeyboardFrameChanged: Bool = false
 
+    open var collectionViewBottomConstraintConstant: CGFloat = 0
+
     open override var canBecomeFirstResponder: Bool {
         return true
     }
@@ -164,7 +166,7 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
         messagesCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         let top = messagesCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: topLayoutGuide.length)
-        let bottom = messagesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        let bottom = messagesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: collectionViewBottomConstraintConstant)
         if #available(iOS 11.0, *) {
             let leading = messagesCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
             let trailing = messagesCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
