@@ -50,6 +50,8 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
     open var collectionViewBottomConstraintConstant: CGFloat = 0
 
+    open var ignoreKeyboardStateChange: Bool = false
+
     open override var canBecomeFirstResponder: Bool {
         return true
     }
